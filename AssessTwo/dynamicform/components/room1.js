@@ -9,14 +9,14 @@ const Room1 = props => {
       <div className="inner-flex">
         <div>
           <p>Adults 18+</p>
-          <select>
+          <select onChange={e => props.nums("adult1", e.target.value)}>
             <option>1</option>
             <option>2</option>
           </select>
         </div>
         <div>
           <p>Children (0-17)</p>
-          <select>
+          <select onChange={e => props.nums("child1", e.target.value)}>
             <option>0</option>
             <option>1</option>
             <option>2</option>

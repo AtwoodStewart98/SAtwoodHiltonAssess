@@ -6,7 +6,7 @@ const Room4 = props => (
       <input
         type="checkbox"
         onChange={() => props.handleRoom4Check()}
-        checked={props.check ? "checked" : null}
+        checked={props.check ? "checked" : ""}
       />
       <header>
         <h3 style={{ fontWeight: props.check ? null : 400 }}>Room 4</h3>
@@ -18,14 +18,20 @@ const Room4 = props => (
     >
       <div>
         <p>Adults 18+</p>
-        <select disabled={props.check ? null : "disabled"}>
+        <select
+          disabled={props.check ? null : "disabled"}
+          onChange={e => props.nums("adult4", e.target.value)}
+        >
           <option>1</option>
           {props.check ? <option>2</option> : null}
         </select>
       </div>
       <div>
         <p>Children (0-17)</p>
-        <select disabled={props.check ? null : "disabled"}>
+        <select
+          disabled={props.check ? null : "disabled"}
+          onChange={e => props.nums("child4", e.target.value)}
+        >
           <option>0</option>
           {props.check ? <option>1</option> : null}
           {props.check ? <option>2</option> : null}
